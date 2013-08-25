@@ -1,0 +1,60 @@
+
+<script src="send_logic.js"></script>
+<script>
+function loadHandler() {
+    if (localStorage["passcode"] != null)
+    {
+        $('txtPassCode').value = localStorage["passcode"];
+    }
+}
+
+function go()
+{
+    localStorage["passcode"] = $('txtPassCode').value;
+    
+    window.close();
+}
+
+function $(o) { return document.getElementById(o); }
+</script>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Chrome to Windows Phone Options</title>
+</head>
+
+<body onload="loadHandler()">
+  <div id="main">
+    <table>
+    <tr>
+    <td><img src="icon.png" heigh="64" width="64" border="0" /></td><td><h1><strong>Chrome to Windows Phone Options</strong></h1></td>
+    </tr>
+    </table>
+  	
+  	<div id="header">
+    	<a href="#">&nbsp;</a>
+    </div>
+    <div id="contentColumn">
+    <h2>Pair with your phone:</h2>
+        <div class="divider"></div>
+        Enter Passcode: <input type="text" id="txtPassCode" />
+        <input type="button" onclick="go();" value="Save" />
+        <br /><br />
+        <p>The Passcode is displayed on the Settings page of the <strong>Chrome to Windows Phone</strong> application.</p>
+        
+
+  </div>
+    <div id="contentColumn">
+    <h2>Download from the Windows Phone Marketplace</h2>
+        <div class="divider"></div>
+        Download Chrome to Windows Phone from the <a href="http://marketplace.windowsphone.com/" target="_BLANK">Windows Phone Marketplace</a>
+  </div>
+  <br />  <br />  <br />  <br />  <br />  <br />
+        <div id="footer"><a href="http://www.daveamenta.com/">Dave Amenta</a></div>
+
+</div>
+
+</body>
+</html>
